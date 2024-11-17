@@ -22,7 +22,7 @@ const Contact = () => {
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-gray-600">📍</span>
-                  <span>Collégien (77090)</span>
+                  <span>Seine-et-Marne</span>
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-gray-600">💼</span>
