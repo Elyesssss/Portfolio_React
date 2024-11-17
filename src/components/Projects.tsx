@@ -67,6 +67,7 @@ const Projects = () => {
               className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
             >
               <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+              <p className="text-gray-600 mb-2 italic">{project.period}</p>
               <p className="text-gray-600 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
