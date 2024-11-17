@@ -75,13 +75,13 @@ const About = () => {
             <div className="space-y-6">
               <p className="text-lg text-gray-600 leading-relaxed">
                 Étudiant en BUT Informatique parcours réalisation d'applications, je suis à la recherche 
-                d'un stage de 2 mois à partir d'avril. Passionné par la cybersécurité, le réseaux et le développement web et logiciel, 
+                d'un stage de 2 mois à partir d'avril 2025. Passionné par la cybersécurité, le réseaux et le développement web et logiciel, 
                 je combine créativité et compétences techniques pour créer des solutions innovantes.
               </p>
               <div className="space-y-2">
                 <p className="text-gray-800"><strong>Email:</strong> elyes.h77@gmail.com</p>
-                <p className="text-gray-800"><strong>Localisation:</strong> Collégien (77090)</p>
-                <p className="text-gray-800"><strong>Disponibilité:</strong> Stage de 2 mois à partir d'avril</p>
+                <p className="text-gray-800"><strong>Localisation:</strong> Ile de France</p>
+                <p className="text-gray-800"><strong>Disponibilité:</strong> Stage de 2 mois à partir d'avril 2025</p>
                 <p className="text-gray-800"><strong>Permis:</strong> Permis B</p>
               </div>
             </div>
