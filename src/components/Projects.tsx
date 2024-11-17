@@ -12,7 +12,7 @@ const Projects = () => {
     },
     {
       title: "Jeu Zelda",
-      description: "Développement d'un clone de Zelda en JavaFX",
+      description: "Développement d'un jeu sur le thème de Zelda en JavaFX",
       period: "Février 2024 - Juin 2024",
       tech: ["Java", "JavaFX"]
     },
@@ -21,7 +21,14 @@ const Projects = () => {
       description: "Configuration et administration d'un serveur web Apache",
       period: "Février 2024 - Mars 2024",
       tech: ["Apache", "Linux", "PHP"]
+    },
+    {
+      title: "Travia Tour",
+      description: "Développement du front-end et du back-end d'un site web pour la réservation de billets de transport intergalactique, intégrant une interface utilisateur moderne et interactive.",
+      period: "septembre 2024 - Janvier 2025",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "java","C","Cartographie Interactive"],
     }
+    
   ];
 
   const container = {
