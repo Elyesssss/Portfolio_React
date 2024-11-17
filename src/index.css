@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+.blob {
+  animation: float 8s ease-in-out infinite;
+  filter: url('#goo');
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.nav-link {
+  @apply relative text-gray-600 hover:text-gray-900 transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.profile-image-container {
+  @apply relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white shadow-xl;
+}
+
+.profile-image-container::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-b from-transparent to-black/20;
+}
+
+.profile-image-upload {
+  @apply hidden;
+}
+
+.profile-image-label {
+  @apply absolute inset-0 flex items-center justify-center bg-black/40 text-white opacity-0 transition-opacity cursor-pointer;
+}
+
+.profile-image-container:hover .profile-image-label {
+  @apply opacity-100;
+}
+
+.file-upload-container {
+  @apply relative border-2 border-dashed border-gray-300 rounded-lg p-6 transition-colors hover:border-blue-500;
+}
+
+.file-upload-input {
+  @apply hidden;
+}
+
+.file-upload-label {
+  @apply flex flex-col items-center justify-center text-gray-500 cursor-pointer;
+}
