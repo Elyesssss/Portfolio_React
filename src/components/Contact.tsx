@@ -26,7 +26,7 @@ const Contact = () => {
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-gray-600">💼</span>
-                  <a href="https://www.linkedin.com/in/elyes-hamani" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  <a href="hwww.linkedin.com/in/elyes-hamani" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                     LinkedIn
                   </a>
                 </p>
