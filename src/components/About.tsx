@@ -95,7 +95,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <motion.a
-              href="https://cvdesignr.com/p/66f17ba3d1020"
+              href="https://cvdesignr.com/p/673d9d8835b7c"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"

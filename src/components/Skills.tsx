@@ -39,6 +39,7 @@ const Skills = () => {
     ],
     'Outils & Environnements': [
       'Git/GitHub',
+      'kali linux ',
       'Docker',
       'Linux/Windows',
       'VS Code/Eclipse'
