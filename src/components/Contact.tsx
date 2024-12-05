@@ -16,10 +16,7 @@ const Contact = () => {
                     elyes.h77@gmail.com
                   </a>
                 </p>
-                <p className="flex items-center gap-3">
-                  <span className="text-gray-600">📱</span>
-                  <span>07 68 88 52 53</span>
-                </p>
+               
                 <p className="flex items-center gap-3">
                   <span className="text-gray-600">📍</span>
                   <span>Seine-et-Marne</span>

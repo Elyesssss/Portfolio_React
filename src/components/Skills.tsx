@@ -23,8 +23,7 @@ const Skills = () => {
       'HTTP/HTTPS',
       'DHCP/DNS',
       'Cisco Packet Tracer',
-      'Marionnet',
-      'Configuration réseau'
+      'Marionnet'
     ],
     'Scripting & Admin': [
       'Bash',
