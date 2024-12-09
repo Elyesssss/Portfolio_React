@@ -5,6 +5,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Skills />
       <Experience />
       <Projects />
+      <Portfolio />
       <Contact />
       <svg className="hidden">
         <defs>

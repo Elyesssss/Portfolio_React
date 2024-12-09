@@ -11,7 +11,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
       const sections = document.querySelectorAll('section[id]');
       const scrollPosition = window.scrollY + 100;
 
@@ -34,14 +33,15 @@ const Navbar = () => {
     { name: 'À Propos', id: 'à-propos' },
     { name: 'Compétences', id: 'compétences' },
     { name: 'Parcours', id: 'parcours' },
-    { name: 'Projets', id: 'projets' }
+    { name: 'Projets', id: 'projets' },
+    { name: 'Portfolio', id: 'portfolio' }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Height of fixed navbar
+      const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
