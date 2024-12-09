@@ -1,10 +1,153 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Settings, Database, BarChart, Users, Brain } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import CloudModal from './CloudModal';
+
+interface CompetenceContent {
+  title: string;
+  description: string;
+  sae?: {
+    title: string;
+    description: string;
+    objectives: string[];
+    skills: string[];
+  };
+}
 
 const Portfolio = () => {
-  const competences = [
+  const [selectedCompetence, setSelectedCompetence] = useState<string | null>(null);
+
+  const competences: Record<string, CompetenceContent> = {
+    "Réaliser": {
+      title: "Réaliser",
+      description: "Développer des applications informatiques simples",
+      sae: {
+        title: "SAÉ 3.01",
+        description: "Développement d'une application complète en équipe",
+        objectives: [
+          "Développer une application avec une architecture complexe",
+          "Mettre en œuvre une méthode de gestion de projet",
+          "Utiliser des outils de gestion de projet",
+          "Déployer l'application"
+        ],
+        skills: [
+          "Programmation avancée",
+          "Architecture logicielle",
+          "Tests et qualité logicielle",
+          "Gestion de versions",
+          "Documentation technique"
+        ]
+      }
+    },
+    "Optimiser": {
+      title: "Optimiser",
+      description: "Appréhender et construire des algorithmes",
+      sae: {
+        title: "SAÉ 3.02",
+        description: "Optimisation d'une application et de son architecture",
+        objectives: [
+          "Analyser les performances d'une application",
+          "Optimiser les algorithmes existants",
+          "Améliorer l'architecture logicielle",
+          "Mettre en place des métriques de performance"
+        ],
+        skills: [
+          "Analyse de complexité",
+          "Profiling d'applications",
+          "Optimisation de code",
+          "Patterns de conception",
+          "Refactoring"
+        ]
+      }
+    },
+    "Administrer": {
+      title: "Administrer",
+      description: "Installation et configuration de services",
+      sae: {
+        title: "SAÉ 3.03",
+        description: "Administration et sécurisation d'un parc informatique",
+        objectives: [
+          "Déployer une infrastructure réseau",
+          "Configurer des services réseau",
+          "Sécuriser l'infrastructure",
+          "Monitorer les services"
+        ],
+        skills: [
+          "Administration système",
+          "Configuration réseau",
+          "Sécurité informatique",
+          "Virtualisation",
+          "Monitoring"
+        ]
+      }
+    },
+    "Gérer": {
+      title: "Gérer",
+      description: "Concevoir et gérer des bases de données",
+      sae: {
+        title: "SAÉ 3.04",
+        description: "Conception et exploitation d'une base de données",
+        objectives: [
+          "Concevoir un modèle de données",
+          "Optimiser les requêtes",
+          "Gérer les accès concurrents",
+          "Assurer la sécurité des données"
+        ],
+        skills: [
+          "Modélisation de données",
+          "Administration de BDD",
+          "SQL avancé",
+          "Sécurité des données",
+          "Performance"
+        ]
+      }
+    },
+    "Conduire": {
+      title: "Conduire",
+      description: "Satisfaire les besoins des utilisateurs",
+      sae: {
+        title: "SAÉ 3.05",
+        description: "Gestion d'un projet de développement",
+        objectives: [
+          "Analyser les besoins client",
+          "Planifier le développement",
+          "Suivre l'avancement du projet",
+          "Gérer la relation client"
+        ],
+        skills: [
+          "Gestion de projet",
+          "Analyse des besoins",
+          "Méthodologies agiles",
+          "Communication client",
+          "Reporting"
+        ]
+      }
+    },
+    "Collaborer": {
+      title: "Collaborer",
+      description: "Travailler dans une équipe informatique",
+      sae: {
+        title: "SAÉ 3.06",
+        description: "Travail en équipe sur un projet complexe",
+        objectives: [
+          "Travailler en équipe",
+          "Partager ses connaissances",
+          "Utiliser des outils collaboratifs",
+          "Participer à la vie de l'équipe"
+        ],
+        skills: [
+          "Travail en équipe",
+          "Outils collaboratifs",
+          "Versionning",
+          "Communication technique",
+          "Code review"
+        ]
+      }
+    }
+  };
+
+  const competenceCards = [
     {
       name: "Réaliser",
       color: "bg-red-600",
@@ -67,13 +210,16 @@ const Portfolio = () => {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {competences.map((comp, index) => (
+          {competenceCards.map((comp, index) => (
             <motion.div
               key={comp.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              onClick={() => setSelectedCompetence(comp.name)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className={`${comp.color} p-4 rounded-t-lg text-white flex items-center justify-between`}>
                 <h3 className="text-xl font-semibold">{comp.name}</h3>
@@ -93,6 +239,60 @@ const Portfolio = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Cloud SVG Filter */}
+        <svg className="hidden">
+          <defs>
+            <filter id="cloud-filter">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+              <feColorMatrix
+                type="matrix"
+                values="1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 30 -15"
+              />
+              <feComposite in="SourceGraphic" operator="atop" />
+            </filter>
+          </defs>
+        </svg>
+
+        {/* Cloud Modal */}
+        {selectedCompetence && competences[selectedCompetence] && (
+          <CloudModal
+            isOpen={!!selectedCompetence}
+            onClose={() => setSelectedCompetence(null)}
+            title={competences[selectedCompetence].title}
+            color={competenceCards.find(c => c.name === selectedCompetence)?.color || 'bg-gray-800'}
+          >
+            {competences[selectedCompetence].sae ? (
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xl font-semibold mb-2">{competences[selectedCompetence].sae.title}</h4>
+                  <p className="text-gray-600">{competences[selectedCompetence].sae.description}</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold mb-2">Objectifs</h5>
+                  <ul className="list-disc list-inside space-y-1">
+                    {competences[selectedCompetence].sae.objectives.map((objective, index) => (
+                      <li key={index} className="text-gray-600">{objective}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold mb-2">Compétences développées</h5>
+                  <ul className="list-disc list-inside space-y-1">
+                    {competences[selectedCompetence].sae.skills.map((skill, index) => (
+                      <li key={index} className="text-gray-600">{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <p className="text-gray-600">Contenu à venir...</p>
+            )}
+          </CloudModal>
+        )}
 
         <div className="mt-16 bg-white p-8 rounded-lg shadow-sm">
           <h3 className="text-2xl font-light mb-6">Démarche Portfolio</h3>
