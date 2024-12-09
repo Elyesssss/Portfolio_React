@@ -202,11 +202,8 @@ const Portfolio = () => {
     <section id="portfolio" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection>
-          <h2 className="text-4xl font-light mb-6 text-center">Portfolio BUT Informatique</h2>
-          <p className="text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-            Auto-évaluation des compétences en 2ème année du BUT Informatique, 
-            parcours Réalisation d'applications.
-          </p>
+          <h2 className="text-4xl font-light mb-6 text-center">Compétences par blocs</h2>
+         
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -294,45 +291,7 @@ const Portfolio = () => {
           </CloudModal>
         )}
 
-        <div className="mt-16 bg-white p-8 rounded-lg shadow-sm">
-          <h3 className="text-2xl font-light mb-6">Démarche Portfolio</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Objectifs</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start space-x-3">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2"></span>
-                  <span className="text-gray-600">Valorisation des compétences développées durant la formation</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2"></span>
-                  <span className="text-gray-600">Démarche de professionnalisation</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2"></span>
-                  <span className="text-gray-600">Individualisation du parcours</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Caractéristiques</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start space-x-3">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2"></span>
-                  <span className="text-gray-600">Démarche réflexive et critique</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2"></span>
-                  <span className="text-gray-600">Documentation et argumentation du développement des compétences</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2"></span>
-                  <span className="text-gray-600">Preuves concrètes des apprentissages</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </section>
   );
