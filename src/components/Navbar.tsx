@@ -15,7 +15,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Initialize theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     setIsDarkMode(savedTheme === 'dark');
     if (savedTheme === 'dark') {
@@ -78,7 +77,7 @@ const Navbar = () => {
       <motion.nav
         className={`fixed w-full z-50 px-4 sm:px-8 py-4 sm:py-6 transition-colors duration-300 ${
           scrolled 
-            ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-sm' 
+            ? 'bg-secondary/80 backdrop-blur-sm shadow-sm' 
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
@@ -88,7 +87,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <motion.a
             href="/"
-            className="text-2xl font-bold dark:text-white"
+            className="text-2xl font-bold text-text"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={(e) => handleNavClick(e, 'hero')}
@@ -104,8 +103,8 @@ const Navbar = () => {
                 href={`#${item.id}`}
                 className={`nav-link relative ${
                   activeSection === item.id 
-                    ? 'text-blue-600 dark:text-blue-400' 
-                    : 'text-gray-600 dark:text-gray-300'
+                    ? 'text-primary' 
+                    : 'text-text/70'
                 }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -116,7 +115,7 @@ const Navbar = () => {
                 {item.name}
                 {activeSection === item.id && (
                   <motion.div
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 dark:bg-blue-400"
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"
                     layoutId="activeSection"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
@@ -127,7 +126,7 @@ const Navbar = () => {
             {/* Theme Toggle Button */}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-full hover:bg-text/10 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -142,7 +141,7 @@ const Navbar = () => {
                   {isDarkMode ? (
                     <Sun className="w-5 h-5 text-yellow-500" />
                   ) : (
-                    <Moon className="w-5 h-5 text-gray-600" />
+                    <Moon className="w-5 h-5 text-text/70" />
                   )}
                 </motion.div>
               </AnimatePresence>
@@ -150,10 +149,10 @@ const Navbar = () => {
 
             <motion.a
               href="#contact"
-              className={`border border-gray-900 dark:border-white px-6 py-2 rounded-full transition-colors ${
+              className={`border border-text px-6 py-2 rounded-full transition-colors ${
                 activeSection === 'contact' 
-                  ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' 
-                  : 'hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900'
+                  ? 'bg-text text-background' 
+                  : 'hover:bg-text hover:text-background'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -170,19 +169,19 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-4">
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-full hover:bg-text/10 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               {isDarkMode ? (
                 <Sun className="w-5 h-5 text-yellow-500" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-600" />
+                <Moon className="w-5 h-5 text-text/70" />
               )}
             </motion.button>
 
             <button
-              className="dark:text-white"
+              className="text-text"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -194,7 +193,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg md:hidden"
+              className="absolute top-full left-0 right-0 bg-secondary shadow-lg md:hidden"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -205,10 +204,10 @@ const Navbar = () => {
                   <a
                     key={item.name}
                     href={`#${item.id}`}
-                    className={`py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded transition-colors ${
+                    className={`py-2 px-4 hover:bg-text/10 rounded transition-colors ${
                       activeSection === item.id 
-                        ? 'text-blue-600 dark:text-blue-400' 
-                        : 'text-gray-600 dark:text-gray-300'
+                        ? 'text-primary' 
+                        : 'text-text/70'
                     }`}
                     onClick={(e) => handleNavClick(e, item.id)}
                   >
@@ -219,8 +218,8 @@ const Navbar = () => {
                   href="#contact"
                   className={`py-2 px-4 mt-2 rounded-full text-center transition-colors ${
                     activeSection === 'contact'
-                      ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900'
-                      : 'bg-gray-800 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-900 dark:hover:bg-gray-100'
+                      ? 'bg-text text-background'
+                      : 'bg-text/90 text-background hover:bg-text'
                   }`}
                   onClick={(e) => handleNavClick(e, 'contact')}
                 >

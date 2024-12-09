@@ -41,10 +41,10 @@ const Experience = () => {
   };
 
   return (
-    <section id="parcours" className="py-20 bg-gray-50">
+    <section id="parcours" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection>
-          <h2 className="text-4xl font-light mb-16 text-center">Parcours</h2>
+          <h2 className="text-4xl font-light mb-16 text-center text-text">Parcours</h2>
         </AnimatedSection>
         <motion.div 
           className="space-y-12"
@@ -59,18 +59,18 @@ const Experience = () => {
               className="flex gap-8"
               variants={item}
             >
-              <div className="w-24 flex-shrink-0 text-right text-gray-500">
+              <div className="w-24 flex-shrink-0 text-right text-text/70">
                 {exp.period}
               </div>
               <div className="flex-grow">
                 <motion.div 
-                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                  className="bg-secondary p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <h3 className="text-xl font-semibold">{exp.title}</h3>
-                  <p className="text-gray-600 mt-2">{exp.location}</p>
+                  <h3 className="text-xl font-semibold text-text">{exp.title}</h3>
+                  <p className="text-text/70 mt-2">{exp.location}</p>
                   {exp.description && (
-                    <p className="text-gray-600 mt-2">{exp.description}</p>
+                    <p className="text-text/70 mt-2">{exp.description}</p>
                   )}
                 </motion.div>
               </div>

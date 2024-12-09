@@ -18,7 +18,7 @@ const CloudModal: React.FC<CloudModalProps> = ({ isOpen, onClose, title, color, 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-text/50 dark:bg-text/50 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
@@ -26,7 +26,7 @@ const CloudModal: React.FC<CloudModalProps> = ({ isOpen, onClose, title, color, 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ type: "spring", damping: 20 }}
-            className="relative max-w-2xl w-full bg-white rounded-[30px] overflow-hidden"
+            className="relative max-w-2xl w-full bg-secondary rounded-[30px] overflow-hidden"
             style={{
               filter: 'url(#cloud-filter)',
               WebkitFilter: 'url(#cloud-filter)'
@@ -34,15 +34,15 @@ const CloudModal: React.FC<CloudModalProps> = ({ isOpen, onClose, title, color, 
             onClick={e => e.stopPropagation()}
           >
             <div className={`${color} p-6 flex justify-between items-center`}>
-              <h3 className="text-2xl font-semibold text-white">{title}</h3>
+              <h3 className="text-2xl font-semibold text-secondary">{title}</h3>
               <button
                 onClick={onClose}
-                className="text-white hover:bg-white/20 rounded-full p-1 transition-colors"
+                className="text-secondary hover:bg-text/20 rounded-full p-1 transition-colors"
               >
                 <X size={24} />
               </button>
             </div>
-            <div className="p-6 max-h-[70vh] overflow-y-auto">
+            <div className="p-6 max-h-[70vh] overflow-y-auto text-text">
               {children}
             </div>
           </motion.div>

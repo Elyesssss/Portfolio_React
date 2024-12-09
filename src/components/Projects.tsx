@@ -26,9 +26,8 @@ const Projects = () => {
       title: "Travia Tour",
       description: "Développement du front-end et du back-end d'un site web pour la réservation de billets de transport intergalactique, intégrant une interface utilisateur moderne et interactive.",
       period: "septembre 2024 - Janvier 2025",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "java","C","Cartographie Interactive"],
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "java", "C", "Cartographie Interactive"],
     }
-    
   ];
 
   const container = {
@@ -47,10 +46,10 @@ const Projects = () => {
   };
 
   return (
-    <section id="projets" className="py-20">
+    <section id="projets" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection>
-          <h2 className="text-4xl font-light mb-16 text-center">Projets</h2>
+          <h2 className="text-4xl font-light mb-16 text-center text-text">Projets</h2>
         </AnimatedSection>
         <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -64,14 +63,17 @@ const Projects = () => {
               key={index}
               variants={item}
               whileHover={{ y: -5 }}
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className="bg-secondary p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
             >
-              <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-              <p className="text-gray-600 mb-2 italic">{project.period}</p>
-              <p className="text-gray-600 mb-4">{project.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-text">{project.title}</h3>
+              <p className="text-text/70 mb-2 italic">{project.period}</p>
+              <p className="text-text/70 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">
+                  <span 
+                    key={tech} 
+                    className="px-3 py-1 bg-background/50 rounded-full text-sm text-text/70"
+                  >
                     {tech}
                   </span>
                 ))}

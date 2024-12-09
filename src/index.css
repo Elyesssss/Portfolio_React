@@ -79,3 +79,44 @@
 .file-upload-label {
   @apply flex flex-col items-center justify-center text-gray-500 cursor-pointer;
 }
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+  }
+}
+@layer base {
+  :root {
+    --color-primary: theme('colors.blue.600');
+    --color-secondary: theme('colors.white');
+    --color-background: theme('colors.white');
+    --color-text: theme('colors.gray.900');
+  }
+
+  :root[class~="dark"] {
+    --color-primary: theme('colors.blue.400');
+    --color-secondary: theme('colors.gray.800');
+    --color-background: theme('colors.gray.900');
+    --color-text: theme('colors.gray.100');
+  }
+
+  body {
+    @apply bg-background text-text;
+  }
+}
+
+/* Si vous avez d'autres styles globaux, gardez-les ici */
+@layer components {
+  .blob {
+    animation: float 8s ease-in-out infinite;
+    filter: url('#goo');
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
