@@ -15,7 +15,7 @@ const Contact = () => {
               <div className="space-y-3">
                 <p className="flex items-center gap-3">
                   <span className="text-text/70">📧</span>
-                  
+                  <a
                     href="mailto:elyes.h77@gmail.com"
                     className="text-primary hover:underline"
                   >
@@ -28,7 +28,7 @@ const Contact = () => {
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-text/70">💼</span>
-                  
+                  <a
                     href="https://www.linkedin.com/in/elyes-hamani"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -39,7 +39,7 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-            
+
             {/* Deuxième colonne */}
             <div>
               <h3 className="text-xl font-semibold mb-4 text-text">Soft Skills</h3>
