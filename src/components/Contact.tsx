@@ -7,8 +7,11 @@ const Contact = () => {
         <h2 className="text-4xl font-light mb-16 text-center text-text">Contact</h2>
         <div className="bg-secondary p-8 rounded-lg shadow-sm">
           <div className="grid md:grid-cols-2 gap-8">
+            {/* Première colonne */}
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-text">Informations de contact</h3>
+              <h3 className="text-xl font-semibold mb-4 text-text">
+                Informations de contact
+              </h3>
               <div className="space-y-3">
                 <p className="flex items-center gap-3">
                   <span className="text-text/70">📧</span>
@@ -19,7 +22,6 @@ const Contact = () => {
                     elyes.h77@gmail.com
                   </a>
                 </p>
-                
                 <p className="flex items-center gap-3">
                   <span className="text-text/70">📍</span>
                   <span className="text-text/70">Seine-et-Marne</span>
@@ -37,6 +39,8 @@ const Contact = () => {
                 </p>
               </div>
             </div>
+            
+            {/* Deuxième colonne */}
             <div>
               <h3 className="text-xl font-semibold mb-4 text-text">Soft Skills</h3>
               <ul className="space-y-2">
@@ -59,6 +63,6 @@ const Contact = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Contact;
