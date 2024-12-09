@@ -22,7 +22,7 @@ const Contact = () => {
                 
                 <p className="flex items-center gap-3">
                   <span className="text-text/70">📍</span>
-                  <span className="text-text">Seine-et-Marne</span>
+                  <span className="text-text/70">Seine-et-Marne</span>
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-text/70">💼</span>
@@ -42,15 +42,15 @@ const Contact = () => {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  <span className="text-text">Autonomie</span>
+                  <span className="text-text/70">Autonomie</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  <span className="text-text">Travail en équipe</span>
+                  <span className="text-text/70">Travail en équipe</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  <span className="text-text">Résolution de problèmes</span>
+                  <span className="text-text/70">Résolution de problèmes</span>
                 </li>
               </ul>
             </div>
