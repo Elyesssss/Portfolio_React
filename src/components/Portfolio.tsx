@@ -199,11 +199,10 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <section id="portfolio" className="py-20 bg-gray-900 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection>
           <h2 className="text-4xl font-light mb-6 text-center">Compétences par blocs</h2>
-         
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -213,24 +212,24 @@ const Portfolio = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
               onClick={() => setSelectedCompetence(comp.name)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <div className={`${comp.color} p-4 rounded-t-lg text-white flex items-center justify-between`}>
+              <div className={`${comp.color} p-4 rounded-t-lg text-white dark:text-gray-800 flex items-center justify-between`}>
                 <h3 className="text-xl font-semibold">{comp.name}</h3>
                 <comp.icon className="w-6 h-6" />
               </div>
               <div className="p-6">
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                  <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 rounded-full text-sm font-medium">
                     {comp.niveau}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{comp.description}</p>
+                <p className="text-gray-800 dark:text-gray-300 mb-4">{comp.description}</p>
                 <div className="border-t pt-4">
-                  <p className="text-sm text-gray-700">{comp.details}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-400">{comp.details}</p>
                 </div>
               </div>
             </motion.div>
@@ -265,33 +264,31 @@ const Portfolio = () => {
             {competences[selectedCompetence].sae ? (
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">{competences[selectedCompetence].sae.title}</h4>
-                  <p className="text-gray-600">{competences[selectedCompetence].sae.description}</p>
+                  <h4 className="text-xl font-semibold mb-2 text-white dark:text-gray-800">{competences[selectedCompetence].sae.title}</h4>
+                  <p className="text-gray-300 dark:text-gray-500">{competences[selectedCompetence].sae.description}</p>
                 </div>
                 <div>
-                  <h5 className="font-semibold mb-2">Objectifs</h5>
+                  <h5 className="font-semibold mb-2 text-white dark:text-gray-800">Objectifs</h5>
                   <ul className="list-disc list-inside space-y-1">
                     {competences[selectedCompetence].sae.objectives.map((objective, index) => (
-                      <li key={index} className="text-gray-600">{objective}</li>
+                      <li key={index} className="text-gray-300 dark:text-gray-500">{objective}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h5 className="font-semibold mb-2">Compétences développées</h5>
+                  <h5 className="font-semibold mb-2 text-white dark:text-gray-800">Compétences développées</h5>
                   <ul className="list-disc list-inside space-y-1">
                     {competences[selectedCompetence].sae.skills.map((skill, index) => (
-                      <li key={index} className="text-gray-600">{skill}</li>
+                      <li key={index} className="text-gray-300 dark:text-gray-500">{skill}</li>
                     ))}
                   </ul>
                 </div>
               </div>
             ) : (
-              <p className="text-gray-600">Contenu à venir...</p>
+              <p className="text-gray-300 dark:text-gray-500">Contenu à venir...</p>
             )}
           </CloudModal>
         )}
-
-      
       </div>
     </section>
   );
