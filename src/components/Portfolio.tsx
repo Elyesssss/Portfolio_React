@@ -255,44 +255,69 @@ const Portfolio = () => {
         </svg>
 
         {selectedCompetence && competences[selectedCompetence] && (
-          <CloudModal
-            isOpen={!!selectedCompetence}
-            onClose={() => setSelectedCompetence(null)}
-            title={competences[selectedCompetence].title}
-            color={competenceCards.find(c => c.name === selectedCompetence)?.color || 'bg-gray-800'}
-          >
-            {competences[selectedCompetence].sae ? (
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-xl font-semibold mb-2 text-text">
-                    {competences[selectedCompetence].sae.title}
-                  </h4>
-                  <p className="text-text/70">
-                    {competences[selectedCompetence].sae.description}
-                  </p>
-                </div>
-                <div>
-                  <h5 className="font-semibold mb-2 text-text">Objectifs</h5>
-                  <ul className="list-disc list-inside space-y-1">
-                    {competences[selectedCompetence].sae.objectives.map((objective, index) => (
-                      <li key={index} className="text-text/70">{objective}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h5 className="font-semibold mb-2 text-text">Compétences développées</h5>
-                  <ul className="list-disc list-inside space-y-1">
-                    {competences[selectedCompetence].sae.skills.map((skill, index) => (
-                      <li key={index} className="text-text/70">{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ) : (
-              <p className="text-text/70">Contenu à venir...</p>
-            )}
-          </CloudModal>
-        )}
+  <CloudModal
+    isOpen={!!selectedCompetence}
+    onClose={() => setSelectedCompetence(null)}
+    title={competences[selectedCompetence].title}
+    color={competenceCards.find(c => c.name === selectedCompetence)?.color || 'bg-gray-800'}
+  >
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="space-y-6"
+    >
+      <div>
+        <h4 className="text-xl font-semibold mb-2 text-text">
+          {competences[selectedCompetence].sae.title}
+        </h4>
+        <p className="text-text/70">
+          {competences[selectedCompetence].sae.description}
+        </p>
+      </div>
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <h5 className="font-semibold mb-2 text-text">Objectifs</h5>
+        <ul className="list-disc list-inside space-y-1">
+          {competences[selectedCompetence].sae.objectives.map((objective, index) => (
+            <motion.li 
+              key={index}
+              initial={{ opacity: 0, x: -5 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 + index * 0.1 }}
+              className="text-text/70"
+            >
+              {objective}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+      >
+        <h5 className="font-semibold mb-2 text-text">Compétences développées</h5>
+        <ul className="list-disc list-inside space-y-1">
+          {competences[selectedCompetence].sae.skills.map((skill, index) => (
+            <motion.li 
+              key={index}
+              initial={{ opacity: 0, x: -5 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6 + index * 0.1 }}
+              className="text-text/70"
+            >
+              {skill}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+    </motion.div>
+  </CloudModal>
+)}
       </div>
     </section>
   );
