@@ -30,7 +30,9 @@ const CloudModal: React.FC<CloudModalProps> = ({ isOpen, onClose, title, color, 
             onClick={(e) => e.stopPropagation()}
           >
             <div className={`${color} p-6 flex justify-between items-center`}>
-              <h3 className="text-2xl font-semibold text-white dark:text-gray-900">{title}</h3>
+              <h3 className={`text-2xl font-semibold ${title === 'Collaborer' ? 'text-white dark:text-gray-900' : 'text-white dark:text-gray-800'}`}>
+                {title}
+              </h3>
               <button
                 onClick={onClose}
                 className="text-white dark:text-gray-900 hover:bg-white/20 dark:hover:bg-gray-900/20 rounded-full p-1 transition-colors"
