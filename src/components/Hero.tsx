@@ -20,12 +20,12 @@ const Hero = () => {
         transition={{ delay: 0.5, duration: 0.8 }}
       >
         <motion.h1 
-          className="text-4xl sm:text-5xl md:text-7xl font-light mb-6 sm:mb-8 text-text"
+          className="text-4xl sm:text-5xl md:text-7xl font-light mb-6 sm:mb-8"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-          <span>Elyes Hamani</span>
+          <span className="text-gray-900 dark:text-gray-900">Elyes Hamani</span>
           <br />
           <motion.span 
             className="text-primary"
@@ -37,7 +37,7 @@ const Hero = () => {
           </motion.span>
         </motion.h1>
         <motion.p 
-          className="text-lg sm:text-xl text-text/70 mb-8"
+          className="text-lg sm:text-xl text-gray-900 dark:text-gray-900 mb-8"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.8 }}
@@ -46,7 +46,7 @@ const Hero = () => {
         </motion.p>
         <motion.a 
           href="#contact" 
-          className="inline-block bg-text text-background px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-text/90 transition-colors"
+          className="inline-block bg-gray-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-gray-800 transition-colors dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.3, duration: 0.8 }}
