@@ -22,16 +22,12 @@ const CloudModal: React.FC<CloudModalProps> = ({ isOpen, onClose, title, color, 
           onClick={onClose}
         >
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
+            exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: "spring", damping: 20 }}
-            className="relative max-w-2xl w-full bg-white rounded-[30px] overflow-hidden"
-            style={{
-              filter: 'url(#cloud-filter)',
-              WebkitFilter: 'url(#cloud-filter)'
-            }}
-            onClick={e => e.stopPropagation()}
+            className="relative max-w-2xl w-full bg-white rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
           >
             <div className={`${color} p-6 flex justify-between items-center`}>
               <h3 className="text-2xl font-semibold text-white">{title}</h3>
@@ -42,9 +38,7 @@ const CloudModal: React.FC<CloudModalProps> = ({ isOpen, onClose, title, color, 
                 <X size={24} />
               </button>
             </div>
-            <div className="p-6 max-h-[70vh] overflow-y-auto">
-              {children}
-            </div>
+            <div className="p-6 max-h-[70vh] overflow-y-auto">{children}</div>
           </motion.div>
         </motion.div>
       )}
