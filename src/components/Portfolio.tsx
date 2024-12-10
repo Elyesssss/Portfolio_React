@@ -194,7 +194,7 @@ const Portfolio = () => {
       icon: Users,
       description: "Travailler dans une équipe informatique",
       niveau: "Niveau 2",
-      details: "Situer son rôle et ses missions au sein d'une équipe informatique"
+      details: "Situer son rôle et ses missions au sein d'une équipe informatique",
        titleColor: "text-white dark:text-white"
     }
   ];
