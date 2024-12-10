@@ -190,7 +190,7 @@ const Portfolio = () => {
     },
     {
       name: "Collaborer",
-      color: "bg-gray-800",
+      color: "bg-white dark:bg-gray-900",
       icon: Users,
       description: "Travailler dans une équipe informatique",
       niveau: "Niveau 2",
