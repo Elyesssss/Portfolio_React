@@ -25,13 +25,13 @@ const Projects = () => {
     {
       title: "Mise en place d'un DNS",
       description: "Configuration et administration d'un serveur DNS en utilisant Netkit et Ubuntu, permettant la résolution de noms de domaines locaux.",
-      period: "Mars 2024 - Avril 2024",
+      period: "Novembre 2024",
       tech: ["Netkit", "Ubuntu", "DNS"]
     },
     {
       title: "Serveur DHCP",
       description: "Mise en place et configuration d'un serveur DHCP avec Netkit et Ubuntu pour l'attribution automatique des adresses IP.",
-      period: "Avril 2024 - Mai 2024",
+      period: "Novembre 2024",
       tech: ["Netkit", "Ubuntu", "DHCP"]
     },
     {
