@@ -23,10 +23,22 @@ const Projects = () => {
       tech: ["Apache", "Linux", "PHP"]
     },
     {
+      title: "Mise en place d'un DNS",
+      description: "Configuration et administration d'un serveur DNS en utilisant Netkit et Ubuntu, permettant la résolution de noms de domaines locaux.",
+      period: "Mars 2024 - Avril 2024",
+      tech: ["Netkit", "Ubuntu", "DNS"]
+    },
+    {
+      title: "Serveur DHCP",
+      description: "Mise en place et configuration d'un serveur DHCP avec Netkit et Ubuntu pour l'attribution automatique des adresses IP.",
+      period: "Avril 2024 - Mai 2024",
+      tech: ["Netkit", "Ubuntu", "DHCP"]
+    },
+    {
       title: "Travia Tour",
       description: "Développement du front-end et du back-end d'un site web pour la réservation de billets de transport intergalactique, intégrant une interface utilisateur moderne et interactive.",
-      period: "septembre 2024 - Janvier 2025",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "java", "C", "Cartographie Interactive"],
+      period: "Septembre 2024 - Janvier 2025",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "Java", "C", "Cartographie Interactive"]
     }
   ];
 
