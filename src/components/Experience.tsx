@@ -11,16 +11,16 @@ const Experience = () => {
       type: "education"
     },
     {
-      title: "Programmation d'un Jeu Zelda en JavaFx",
-      location: "IUT de Montreuil",
-      period: "Février 2024 - Juin 2024",
-      type: "project"
+      title: "BUT Informatique",
+      location: "IUT de Montreuil - Paris 8",
+      period: "2023-2024",
+      type: "education"
     },
     {
-      title: "Création et administration d'un Serveur web",
-      location: "IUT Montreuil",
-      period: "Février 2024 - Mars 2024",
-      description: "Gestion de sites web et de bases de données via Apache 2",
+      title: "Bac STI2D spécialité Systèmes d'Information et Numérique",
+      location: "Lycée Simone Veil Noisiel",
+      period: "2022-2023",
+      description: "Mention Assez bien",
       type: "project"
     }
   ];
