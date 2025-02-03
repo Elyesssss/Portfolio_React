@@ -6,43 +6,41 @@ const Skills = () => {
   const skills = {
     'Programmation': [
       'HTML/CSS/JavaScript',
+      'React',
       'Java/JavaFX',
-      'C/C++',
+      'C',
       'PHP/SQL'
     ],
     'Sécurité': [
       'John The Ripper',
       'Nmap',
       'Wireshark',
-      'Cryptographie',
-      'Tests d\'intrusion',
-      'Sécurité réseau'
+      'Cryptographie'
     ],
     'Réseaux': [
       'Protocoles TCP/IP',
       'HTTP/HTTPS',
       'DHCP/DNS',
+      'Firewall',
       'Cisco Packet Tracer',
       'Marionnet'
     ],
-    'Scripting & Admin': [
+    'Scripting ': [
       'Bash',
       'PowerShell',
-      'Administration Linux',
-      'Shell scripting'
+      'Linux',
+      'Shell'
     ],
     'Base de données': [
       'MySQL/MariaDB',
       'PostgreSQL',
-      'Administration BDD',
-      'Modélisation'
+      'MongoDB'
     ],
     'Outils & Environnements': [
       'Git/GitHub',
       'kali linux ',
-      'Docker',
       'Linux/Windows',
-      'VS Code/Eclipse'
+      'VS Code/Eclipse/IntelliJ'
     ]
   };
 

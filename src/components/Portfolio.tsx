@@ -23,20 +23,19 @@ const Portfolio = () => {
       title: "Réaliser",
       description: "Développer des applications informatiques simples",
       sae: {
-        title: "SAÉ 3.01",
-        description: "Développement d'une application complète en équipe",
+        title: "Niveau 2",
+        description: "Partir des exigences et aller jusqu'à une application complète",
         objectives: [
-          "Développer une application avec une architecture complexe",
-          "Mettre en œuvre une méthode de gestion de projet",
-          "Utiliser des outils de gestion de projet",
-          "Déployer l'application"
+          "Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences",
+          "Appliquer des principes d'accessibilité et d'ergonomie",
+          "Adopter de bonnes pratiques de conception et de programmation",
+          "Vérifier et valider la qualité de l'application par les tests"
         ],
         skills: [
-          "Programmation avancée",
-          "Architecture logicielle",
-          "Tests et qualité logicielle",
-          "Gestion de versions",
-          "Documentation technique"
+          "AC21.01 | Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences",
+          "AC21.02 | Appliquer des principes d'accessibilité et d'ergonomie",
+          "AC21.03 | Adopter de bonnes pratiques de conception et de programmation",
+          "AC21.04 | Vérifier et valider la qualité de l'application par les tests"
         ]
       }
     },
@@ -44,41 +43,37 @@ const Portfolio = () => {
       title: "Optimiser",
       description: "Appréhender et construire des algorithmes",
       sae: {
-        title: "SAÉ 3.02",
-        description: "Optimisation d'une application et de son architecture",
+        title: "Niveau 2",
+        description: "Sélectionner les algorithmes adéquats pour répondre à un problème donné",
         objectives: [
-          "Analyser les performances d'une application",
-          "Optimiser les algorithmes existants",
-          "Améliorer l'architecture logicielle",
-          "Mettre en place des métriques de performance"
+          "Choisir des structures de données complexes adaptées au problème",
+          "Utiliser des techniques algorithmiques adaptées pour des problèmes complexes",
+          "Comprendre les enjeux et moyens de sécurisation des données et du code",
+          "Évaluer l'impact environnemental et sociétal des solutions proposées"
         ],
         skills: [
-          "Analyse de complexité",
-          "Profiling d'applications",
-          "Optimisation de code",
-          "Patterns de conception",
-          "Refactoring"
+          "AC22.01 | Choisir des structures de données complexes adaptées au problème",
+          "AC22.02 | Utiliser des techniques algorithmiques adaptées pour des problèmes complexes",
+          "AC22.03 | Comprendre les enjeux et moyens de sécurisation des données et du code",
+          "AC22.04 | Évaluer l'impact environnemental et sociétal des solutions proposées"
         ]
       }
     },
     "Administrer": {
       title: "Administrer",
-      description: "Installation et configuration de services",
+      description: "Installation et configuration",
       sae: {
-        title: "SAÉ 3.03",
-        description: "Administration et sécurisation d'un parc informatique",
+        title: "Niveau 2",
+        description: "Déployer des services dans une architecture réseau",
         objectives: [
-          "Déployer une infrastructure réseau",
-          "Configurer des services réseau",
-          "Sécuriser l'infrastructure",
-          "Monitorer les services"
+          "Concevoir et développer des applications communicantes",
+          "Utiliser des serveurs et des services réseaux virtualisés",
+          "Sécuriser les services et données d'un système"
         ],
         skills: [
-          "Administration système",
-          "Configuration réseau",
-          "Sécurité informatique",
-          "Virtualisation",
-          "Monitoring"
+          "AC23.01 | Concevoir et développer des applications communicantes",
+          "AC23.02 | Utiliser des serveurs et des services réseaux virtualisés",
+          "AC23.03 | Sécuriser les services et données d'un système"
         ]
       }
     },
@@ -86,20 +81,19 @@ const Portfolio = () => {
       title: "Gérer",
       description: "Concevoir et gérer des bases de données",
       sae: {
-        title: "SAÉ 3.04",
-        description: "Conception et exploitation d'une base de données",
+        title: "Niveau 2",
+        description: "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
         objectives: [
-          "Concevoir un modèle de données",
-          "Optimiser les requêtes",
-          "Gérer les accès concurrents",
-          "Assurer la sécurité des données"
+          "Optimiser les modèles de données de l'entreprise",
+          "Assurer la sécurité des données (intégrité et confidentialité)",
+          "Organiser la restitution de données à travers la programmation et la visualisation",
+          "Manipuler des données hétérogènes"
         ],
         skills: [
-          "Modélisation de données",
-          "Administration de BDD",
-          "SQL avancé",
-          "Sécurité des données",
-          "Performance"
+          "AC24.01 | Optimiser les modèles de données de l'entreprise",
+          "AC24.02 | Assurer la sécurité des données (intégrité et confidentialité)",
+          "AC24.03 | Organiser la restitution de données à travers la programmation et la visualisation",
+          "AC24.04 | Manipuler des données hétérogènes"
         ]
       }
     },
@@ -107,20 +101,19 @@ const Portfolio = () => {
       title: "Conduire",
       description: "Satisfaire les besoins des utilisateurs",
       sae: {
-        title: "SAÉ 3.05",
-        description: "Gestion d'un projet de développement",
+        title: "Niveau 2",
+        description: "Appliquer une démarche de suivi de projet en fonction des besoins métiers des clients et des utilisateurs",
         objectives: [
-          "Analyser les besoins client",
-          "Planifier le développement",
-          "Suivre l'avancement du projet",
-          "Gérer la relation client"
+          "Identifier les processus présents dans une organisation en vue d'améliorer les systèmes d'information",
+          "Formaliser les besoins du client et de l'utilisateur",
+          "Identifier les critères de faisabilité d'un projet informatique",
+          "Définir et mettre en œuvre une démarche de suivi de projet"
         ],
         skills: [
-          "Gestion de projet",
-          "Analyse des besoins",
-          "Méthodologies agiles",
-          "Communication client",
-          "Reporting"
+          "AC25.01 | Identifier les processus présents dans une organisation en vue d'améliorer les systèmes d'information",
+          "AC25.02 | Formaliser les besoins du client et de l'utilisateur",
+          "AC25.03 | Identifier les critères de faisabilité d'un projet informatique",
+          "AC25.04 | Définir et mettre en œuvre une démarche de suivi de projet"
         ]
       }
     },
@@ -128,20 +121,19 @@ const Portfolio = () => {
       title: "Collaborer",
       description: "Travailler dans une équipe informatique",
       sae: {
-        title: "SAÉ 3.06",
-        description: "Travail en équipe sur un projet complexe",
+        title: "Niveau 2",
+        description: "Situer son rôle et ses missions au sein d'une équipe informatique",
         objectives: [
-          "Travailler en équipe",
-          "Partager ses connaissances",
-          "Utiliser des outils collaboratifs",
-          "Participer à la vie de l'équipe"
+          "Comprendre la diversité, la situation et la dimension de l'informatique dans une organisation (ESN, DSI...)",
+          "Appliquer une démarche pour intégrer une équipe informatique au sein d'une organisation",
+          "Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique",
+          "Rendre compte de son activité professionnelle"
         ],
         skills: [
-          "Travail en équipe",
-          "Outils collaboratifs",
-          "Versionning",
-          "Communication technique",
-          "Code review"
+          "AC26.01 | Comprendre la diversité, la situation et la dimension de l'informatique dans une organisation (ESN, DSI...)",
+          "AC26.02 | Appliquer une démarche pour intégrer une équipe informatique au sein d'une organisation",
+          "AC26.03 | Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique",
+          "AC26.04 | Rendre compte de son activité professionnelle"
         ]
       }
     }
@@ -190,7 +182,7 @@ const Portfolio = () => {
     },
     {
       name: "Collaborer",
-      color: "bg-white dark:bg-gray-900",
+      color: "bg-black",
       icon: Users,
       description: "Travailler dans une équipe informatique",
       niveau: "Niveau 2",
@@ -199,8 +191,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-900 text-white">
-      <div className="max-w-6xl mx-auto px-4">
+<section id="portfolio" className="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">      <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection>
           <h2 className="text-4xl font-light mb-6 text-center">Compétences par blocs</h2>
         </AnimatedSection>
