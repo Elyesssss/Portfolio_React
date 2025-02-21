@@ -29,10 +29,10 @@ const Projects = () => {
       tech: ["Netkit", "Ubuntu", "DNS"]
     },
     {
-      title: "Serveur DHCP",
-      description: "Mise en place et configuration d'un serveur DHCP avec Netkit et Ubuntu pour l'attribution automatique des adresses IP.",
-      period: "Novembre 2024",
-      tech: ["Netkit", "Ubuntu", "DHCP"]
+      title: "Mise en place d'un scanner de vulnérabilité aux injections sql",
+      description: "Développement un scanner de sécurité en Go permettant l'identification automatisée des vulnérabilités SQL dans les applications web.",
+      period: "Février 2025",
+      tech: ["Go"]
     },
     {
       title: "Travia Tour",

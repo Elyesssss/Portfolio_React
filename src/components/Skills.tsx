@@ -5,11 +5,12 @@ import AnimatedSection from './AnimatedSection';
 const Skills = () => {
   const skills = {
     'Programmation': [
-      'HTML/CSS/JavaScript',
-      'React',
+      'HTML/CSS',
+      'React/JavaScript/TypeScript',
       'Java/JavaFX',
       'C',
-      'PHP/SQL'
+      'PHP/SQL',
+      'Go'
     ],
     'Sécurité': [
       'John The Ripper',
@@ -22,13 +23,9 @@ const Skills = () => {
       'HTTP/HTTPS',
       'DHCP/DNS',
       'Firewall',
-      'Cisco Packet Tracer',
-      'Marionnet'
     ],
     'Scripting ': [
       'Bash',
-      'PowerShell',
-      'Linux',
       'Shell'
     ],
     'Base de données': [
@@ -37,9 +34,10 @@ const Skills = () => {
       'MongoDB'
     ],
     'Outils & Environnements': [
+      'Cisco Packet Tracer',
+      'Marionnet',
       'Git/GitHub',
-      'kali linux ',
-      'Linux/Windows',
+      'Kali Linux/Windows',
       'VS Code/Eclipse/IntelliJ'
     ]
   };
