@@ -15,34 +15,44 @@ const CloudModal: React.FC<CloudModalProps> = ({ isOpen, onClose, title, color, 
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-          onClick={onClose}
+          transition={{ duration: 0.2 }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              onClose();
+            }
+          }}
         >
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ type: "spring", damping: 20 }}
-            className="relative max-w-2xl w-full bg-white dark:bg-gray-900 rounded-lg overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <div className={`${color} p-6 flex justify-between items-center`}>
-              <h3 className="text-2xl font-semibold text-white">
-                {title}
-              </h3>
-              <button
+            <div className={`${color} p-4 rounded-t-lg text-white flex items-center justify-between`}>
+              <h2 className="text-2xl font-semibold">{title}</h2>
+              <motion.button
                 onClick={onClose}
-                className="text-white hover:bg-white/20 rounded-full p-1 transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               >
                 <X size={24} />
-              </button>
+              </motion.button>
             </div>
-            <div className="p-6 max-h-[70vh] overflow-y-auto text-gray-700 dark:text-gray-300">
+            <motion.div
+              className="p-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ delay: 0.1 }}
+            >
               {children}
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

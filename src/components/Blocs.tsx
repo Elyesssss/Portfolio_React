@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Code2, Settings, Database, BarChart, Users, Brain } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Code2, Settings, Database, BarChart, Users, Brain, X } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import CloudModal from './CloudModal';
 
@@ -10,13 +10,21 @@ interface CompetenceContent {
   sae?: {
     title: string;
     description: string;
-    objectives: string[];
     skills: string[];
+  };
+  project?: {
+    title: string;
+    period: string;
+    description: string;
+    technologies: string[];
+    images?: string[];
+    image?: string;
   };
 }
 
 const Blocs = () => {
   const [selectedCompetence, setSelectedCompetence] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const competences: Record<string, CompetenceContent> = {
     "Réaliser": {
@@ -25,18 +33,19 @@ const Blocs = () => {
       sae: {
         title: "Niveau 2",
         description: "Partir des exigences et aller jusqu'à une application complète",
-        objectives: [
+        skills: [
           "Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences",
           "Appliquer des principes d'accessibilité et d'ergonomie",
           "Adopter de bonnes pratiques de conception et de programmation",
           "Vérifier et valider la qualité de l'application par les tests"
-        ],
-        skills: [
-          "AC21.01 | Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences",
-          "AC21.02 | Appliquer des principes d'accessibilité et d'ergonomie",
-          "AC21.03 | Adopter de bonnes pratiques de conception et de programmation",
-          "AC21.04 | Vérifier et valider la qualité de l'application par les tests"
         ]
+      },
+      project: {
+        title: "Portail Bancaire",
+        period: "Septembre 2024 - Janvier 2025",
+        description: "Création d'un portail bancaire programmé en HTML/CSS/PHP/SQL. L'application met en œuvre une interface utilisateur ergonomique, des fonctionnalités de sécurité robustes, et une architecture modulaire suivant les bonnes pratiques de développement. L'application répond aux exigences fonctionnelles spécifiques du secteur bancaire tout en respectant les normes d'accessibilité.",
+        technologies: ["HTML", "CSS", "PHP", "SQL"],
+        image: "/src/assets/images/portail-bancaire.png"
       }
     },
     "Optimiser": {
@@ -45,18 +54,19 @@ const Blocs = () => {
       sae: {
         title: "Niveau 2",
         description: "Sélectionner les algorithmes adéquats pour répondre à un problème donné",
-        objectives: [
+        skills: [
           "Choisir des structures de données complexes adaptées au problème",
           "Utiliser des techniques algorithmiques adaptées pour des problèmes complexes",
           "Comprendre les enjeux et moyens de sécurisation des données et du code",
           "Évaluer l'impact environnemental et sociétal des solutions proposées"
-        ],
-        skills: [
-          "AC22.01 | Choisir des structures de données complexes adaptées au problème",
-          "AC22.02 | Utiliser des techniques algorithmiques adaptées pour des problèmes complexes",
-          "AC22.03 | Comprendre les enjeux et moyens de sécurisation des données et du code",
-          "AC22.04 | Évaluer l'impact environnemental et sociétal des solutions proposées"
         ]
+      },
+      project: {
+        title: "Scanner de vulnérabilité SQL",
+        period: "Février 2025",
+        description: "Développement d'un scanner de vulnérabilités SQL open source en Go. L'outil permet de détecter automatiquement les vulnérabilités d'injection SQL dans les applications web. Il utilise des patterns de détection basés sur les erreurs SQL, des tests de temps de réponse et l'analyse des changements dans la structure de la page. Une analyse récursive des pages et une gestion efficace des scans concurrents permettent une couverture complète du site. Des mécanismes de rate limiting permettent d'éviter les impacts sur les systèmes cibles lors des tests de pénétration.",
+        technologies: ["Go"],
+        image: "/src/assets/images/scanner-sql.jpg"
       }
     },
     "Administrer": {
@@ -65,16 +75,18 @@ const Blocs = () => {
       sae: {
         title: "Niveau 2",
         description: "Déployer des services dans une architecture réseau",
-        objectives: [
+        skills: [
           "Concevoir et développer des applications communicantes",
           "Utiliser des serveurs et des services réseaux virtualisés",
           "Sécuriser les services et données d'un système"
-        ],
-        skills: [
-          "AC23.01 | Concevoir et développer des applications communicantes",
-          "AC23.02 | Utiliser des serveurs et des services réseaux virtualisés",
-          "AC23.03 | Sécuriser les services et données d'un système"
         ]
+      },
+      project: {
+        title: "Serveur Web",
+        period: "Février 2024 - Mars 2024",
+        description: "Configuration et administration d'un serveur web Apache. Mise en place d'une infrastructure web complète avec gestion des certificats SSL, configuration des virtual hosts, mise en place de règles de pare-feu, et optimisation des performances. L'administration inclut également la gestion des utilisateurs, la configuration des logs, et la mise en place de sauvegardes automatisées.",
+        technologies: ["Apache", "Linux", "PHP"],
+        image: "/src/assets/images/serveur-web.png"
       }
     },
     "Gérer": {
@@ -83,17 +95,23 @@ const Blocs = () => {
       sae: {
         title: "Niveau 2",
         description: "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
-        objectives: [
+        skills: [
           "Optimiser les modèles de données de l'entreprise",
           "Assurer la sécurité des données (intégrité et confidentialité)",
           "Organiser la restitution de données à travers la programmation et la visualisation",
           "Manipuler des données hétérogènes"
-        ],
-        skills: [
-          "AC24.01 | Optimiser les modèles de données de l'entreprise",
-          "AC24.02 | Assurer la sécurité des données (intégrité et confidentialité)",
-          "AC24.03 | Organiser la restitution de données à travers la programmation et la visualisation",
-          "AC24.04 | Manipuler des données hétérogènes"
+        ]
+      },
+      project: {
+        title: "Système de Réservation de Billets de Train",
+        period: "Janvier 2025 - Mars 2025",
+        description: "Développement d'un système de réservation de billets de train avec MongoDB. Conception d'une base de données optimisée pour les trajets, réservations et utilisateurs. L'application inclut un système de panier dynamique, une gestion des sessions et un processus de paiement sécurisé avec timeout.",
+        technologies: ["JavaScript", "MongoDB", "Node.js", "Express"],
+        images: [
+          "/src/assets/images/train1.png",
+          "/src/assets/images/train2.png",
+          "/src/assets/images/train3.png",
+          "/src/assets/images/train4.png"
         ]
       }
     },
@@ -103,18 +121,19 @@ const Blocs = () => {
       sae: {
         title: "Niveau 2",
         description: "Appliquer une démarche de suivi de projet en fonction des besoins métiers des clients et des utilisateurs",
-        objectives: [
+        skills: [
           "Identifier les processus présents dans une organisation en vue d'améliorer les systèmes d'information",
           "Formaliser les besoins du client et de l'utilisateur",
           "Identifier les critères de faisabilité d'un projet informatique",
           "Définir et mettre en œuvre une démarche de suivi de projet"
-        ],
-        skills: [
-          "AC25.01 | Identifier les processus présents dans une organisation en vue d'améliorer les systèmes d'information",
-          "AC25.02 | Formaliser les besoins du client et de l'utilisateur",
-          "AC25.03 | Identifier les critères de faisabilité d'un projet informatique",
-          "AC25.04 | Définir et mettre en œuvre une démarche de suivi de projet"
         ]
+      },
+      project: {
+        title: "Jeu Zelda",
+        period: "Février 2024 - Juin 2024",
+        description: "Développement d'un jeu sur le thème de Zelda en JavaFX. Analyse approfondie des processus de jeu et des besoins utilisateurs. L'identification des processus a permis d'améliorer l'expérience de jeu, tandis que la formalisation des besoins via des user stories a guidé le développement. Les critères de faisabilité ont été évalués en termes de performance et de complexité technique. La méthode Scrum a été mise en œuvre avec des sprints de deux semaines, des revues régulières et une adaptation continue aux retours utilisateurs.",
+        technologies: ["Java", "JavaFX"],
+        image: "/src/assets/images/zelda.png"
       }
     },
     "Collaborer": {
@@ -123,17 +142,23 @@ const Blocs = () => {
       sae: {
         title: "Niveau 2",
         description: "Situer son rôle et ses missions au sein d'une équipe informatique",
-        objectives: [
+        skills: [
           "Comprendre la diversité, la situation et la dimension de l'informatique dans une organisation (ESN, DSI...)",
           "Appliquer une démarche pour intégrer une équipe informatique au sein d'une organisation",
           "Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique",
           "Rendre compte de son activité professionnelle"
-        ],
-        skills: [
-          "AC26.01 | Comprendre la diversité, la situation et la dimension de l'informatique dans une organisation (ESN, DSI...)",
-          "AC26.02 | Appliquer une démarche pour intégrer une équipe informatique au sein d'une organisation",
-          "AC26.03 | Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique",
-          "AC26.04 | Rendre compte de son activité professionnelle"
+        ]
+      },
+      project: {
+        title: "Travia Tour",
+        period: "Septembre 2024 - Janvier 2025",
+        description: "Développement d'un système de recherche de parcours dans une base de données de plus de 150 000 planètes de l'univers Star Wars. L'application permet de trouver les meilleurs itinéraires intergalactiques avec une interface utilisateur intuitive. Le projet met en œuvre des algorithmes de recherche efficaces pour gérer cette masse de données, tout en assurant une expérience utilisateur fluide. Le développement s'est fait en équipe avec une répartition claire des rôles, l'utilisation de Git pour la gestion collaborative du code, et l'organisation de réunions régulières pour la coordination. L'intégration continue et le code review systématique assurent la cohérence du développement.",
+        technologies: ["HTML", "CSS", "JavaScript", "PHP", "Java", "C"],
+        images: [
+          "/src/assets/images/traviaRecherche1.png",
+          "/src/assets/images/traviaRecherche2.png",
+          "/src/assets/images/traviaRecherche3.png",
+          "/src/assets/images/traviaRecherche4.png"
         ]
       }
     }
@@ -191,7 +216,8 @@ const Blocs = () => {
   ];
 
   return (
-<section id="portfolio" className="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">      <div className="max-w-6xl mx-auto px-4">
+    <section id="portfolio" className="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection>
           <h2 className="text-4xl font-light mb-6 text-center">Compétences par blocs</h2>
         </AnimatedSection>
@@ -209,20 +235,20 @@ const Blocs = () => {
               whileTap={{ scale: 0.98 }}
             >
               <div className={`${comp.color} p-4 rounded-t-lg text-white flex items-center justify-between`}>
-  <h3 className="text-xl font-semibold">{comp.name}</h3>
-  <comp.icon className="w-6 h-6" />
-</div>
-<div className="p-6">
-  <div className="mb-4">
-    <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-sm font-medium">
-      {comp.niveau}
-    </span>
-  </div>
-  <p className="text-gray-900 dark:text-white mb-4">{comp.description}</p>
-  <div className="border-t pt-4">
-    <p className="text-sm text-gray-900 dark:text-white">{comp.details}</p>
-  </div>
-</div>
+                <h3 className="text-xl font-semibold">{comp.name}</h3>
+                <comp.icon className="w-6 h-6" />
+              </div>
+              <div className="p-6">
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-sm font-medium">
+                    {comp.niveau}
+                  </span>
+                </div>
+                <p className="text-gray-900 dark:text-white mb-4">{comp.description}</p>
+                <div className="border-t pt-4">
+                  <p className="text-sm text-gray-900 dark:text-white">{comp.details}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -244,6 +270,109 @@ const Blocs = () => {
           </defs>
         </svg>
 
+        {/* Image Modal with AnimatePresence */}
+        <AnimatePresence>
+          {selectedImage && selectedCompetence && competences[selectedCompetence]?.project && (
+            <motion.div 
+              className="fixed inset-0 z-[100] flex flex-col items-center justify-start bg-black bg-opacity-90 p-4 overflow-y-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                  setSelectedImage(null);
+                }
+              }}
+            >
+              <motion.div 
+                className="w-full max-w-6xl"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <div className="flex justify-end mb-4">
+                  <motion.button
+                    onClick={() => setSelectedImage(null)}
+                    className="text-white hover:text-gray-300 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <X size={32} />
+                  </motion.button>
+                </div>
+                <motion.div 
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden"
+                  initial={{ y: 20 }}
+                  animate={{ y: 0 }}
+                  exit={{ y: 20 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <motion.img
+                    src={selectedImage}
+                    alt="Image en grand format"
+                    className="w-full h-auto object-contain"
+                    initial={{ scale: 0.95 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  />
+                  <div className="p-6">
+                    <motion.h5 
+                      className="text-xl font-semibold mb-2 text-gray-900 dark:text-white"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      {competences[selectedCompetence].project.title}
+                    </motion.h5>
+                    <motion.p 
+                      className="text-sm text-gray-600 dark:text-gray-300 mb-2"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      {competences[selectedCompetence].project.period}
+                    </motion.p>
+                    <motion.p 
+                      className="text-gray-900 dark:text-white mb-4"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      {competences[selectedCompetence].project.description}
+                    </motion.p>
+                    <motion.div 
+                      className="flex flex-wrap gap-2"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      {competences[selectedCompetence].project.technologies.map((tech: string, index: number) => (
+                        <motion.span 
+                          key={index}
+                          className="px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-sm"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ delay: 0.5 + index * 0.1 }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Cloud Modal */}
         {selectedCompetence && competences[selectedCompetence] && (
           <CloudModal
@@ -253,39 +382,313 @@ const Blocs = () => {
             color={competenceCards.find(c => c.name === selectedCompetence)?.color || 'bg-gray-800'}
           >
             {competences[selectedCompetence].sae ? (
-  <div className="space-y-6">
-    <div>
-      <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-        {competences[selectedCompetence].sae.title}
-      </h4>
-      <p className="text-gray-900 dark:text-white">
-        {competences[selectedCompetence].sae.description}
-      </p>
-    </div>
-    <div>
-      <h5 className="font-semibold mb-2 text-gray-900 dark:text-white">Objectifs</h5>
-      <ul className="list-disc list-inside space-y-1">
-        {competences[selectedCompetence].sae.objectives.map((objective, index) => (
-          <li key={index} className="text-gray-900 dark:text-white">{objective}</li>
-        ))}
-      </ul>
-    </div>
-    <div>
-      <h5 className="font-semibold mb-2 text-gray-900 dark:text-white">Compétences développées</h5>
-      <ul className="list-disc list-inside space-y-1">
-        {competences[selectedCompetence].sae.skills.map((skill, index) => (
-          <li key={index} className="text-gray-900 dark:text-white">{skill}</li>
-        ))}
-      </ul>
-    </div>
-  </div>
-) : (
-  <p className="text-gray-900 dark:text-white">Contenu à venir...</p>
-)}
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                    {competences[selectedCompetence].sae.title}
+                  </h4>
+                  <p className="text-gray-900 dark:text-white">
+                    {competences[selectedCompetence].sae.description}
+                  </p>
+                </div>
+                <div>
+                  <h5 className="font-semibold mb-2 text-gray-900 dark:text-white">Compétences développées</h5>
+                  <ul className="list-disc list-inside space-y-1">
+                    {competences[selectedCompetence].sae.skills.map((skill, index) => (
+                      <li key={index} className="text-gray-900 dark:text-white">{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {competences[selectedCompetence].project && (
+                  <div className="mt-8 border-t pt-6">
+                    <h4 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Projet associé</h4>
+                    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                      <div className="relative">
+                        {competences[selectedCompetence].project.images ? (
+                          <CarouselImages 
+                            images={competences[selectedCompetence].project.images} 
+                            title={competences[selectedCompetence].project.title}
+                            period={competences[selectedCompetence].project.period}
+                            description={competences[selectedCompetence].project.description}
+                            technologies={competences[selectedCompetence].project.technologies}
+                          />
+                        ) : (
+                          <div 
+                            className="relative cursor-pointer group"
+                            onClick={() => competences[selectedCompetence].project?.image && setSelectedImage(competences[selectedCompetence].project.image)}
+                          >
+                            <img 
+                              src={competences[selectedCompetence].project?.image} 
+                              alt={competences[selectedCompetence].project?.title}
+                              className="w-full h-64 object-contain bg-gray-100 dark:bg-gray-700 transition-transform duration-300 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
+                              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Cliquez pour agrandir
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-4">
+                        <h5 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                          {competences[selectedCompetence].project?.title}
+                        </h5>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+                          {competences[selectedCompetence].project?.period}
+                        </p>
+                        <p className="text-gray-900 dark:text-white mb-4">
+                          {competences[selectedCompetence].project?.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {competences[selectedCompetence].project?.technologies.map((tech, index) => (
+                            <span 
+                              key={index}
+                              className="px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-sm"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <p className="text-gray-900 dark:text-white">Contenu à venir...</p>
+            )}
           </CloudModal>
         )}
       </div>
     </section>
+  );
+};
+
+const CarouselImages = ({ images, title, period, description, technologies }: { 
+  images: string[];
+  title: string;
+  period: string;
+  description: string;
+  technologies: string[];
+}) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const previousImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextImage, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <>
+      <div className="relative h-64 bg-gray-100 dark:bg-gray-700">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            className="w-full h-full cursor-pointer group"
+            onClick={() => setSelectedImage(images[currentIndex])}
+          >
+            <motion.img
+              src={images[currentIndex]}
+              alt={`Image ${currentIndex + 1}`}
+              className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
+              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Cliquez pour agrandir
+              </span>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+        
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            previousImage();
+          }}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          aria-label="Image précédente"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            nextImage();
+          }}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          aria-label="Image suivante"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentIndex(index);
+              }}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentIndex ? 'bg-blue-500' : 'bg-gray-300 dark:bg-gray-600'
+              }`}
+              aria-label={`Aller à l'image ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Modal pour l'image agrandie */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-start bg-black bg-opacity-90 p-4 overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div 
+              className="w-full max-w-6xl"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <div className="flex justify-end mb-4">
+                <motion.button
+                  onClick={() => setSelectedImage(null)}
+                  className="text-white hover:text-gray-300 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <X size={32} />
+                </motion.button>
+              </div>
+              <motion.div 
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden"
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+                exit={{ y: 20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <div className="relative">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={currentIndex}
+                      src={images[currentIndex]}
+                      alt="Image en grand format"
+                      className="w-full h-auto object-contain"
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -100 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    />
+                  </AnimatePresence>
+                  
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      previousImage();
+                    }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    aria-label="Image précédente"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextImage();
+                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    aria-label="Image suivante"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+                
+                <div className="p-6">
+                  <motion.h5 
+                    className="text-xl font-semibold mb-2 text-gray-900 dark:text-white"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    {title}
+                  </motion.h5>
+                  <motion.p 
+                    className="text-sm text-gray-600 dark:text-gray-300 mb-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    {period}
+                  </motion.p>
+                  <motion.p 
+                    className="text-gray-900 dark:text-white mb-4"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    {description}
+                  </motion.p>
+                  <motion.div 
+                    className="flex flex-wrap gap-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    {technologies.map((tech, index) => (
+                      <motion.span 
+                        key={index}
+                        className="px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-sm"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ delay: 0.5 + index * 0.1 }}
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
