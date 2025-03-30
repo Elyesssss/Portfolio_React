@@ -45,7 +45,7 @@ const Blocs = () => {
         period: "Septembre 2024 - Janvier 2025",
         description: "Création d'un portail bancaire programmé en HTML/CSS/PHP/SQL. L'application met en œuvre une interface utilisateur ergonomique, des fonctionnalités de sécurité robustes, et une architecture modulaire suivant les bonnes pratiques de développement. L'application répond aux exigences fonctionnelles spécifiques du secteur bancaire tout en respectant les normes d'accessibilité.",
         technologies: ["HTML", "CSS", "PHP", "SQL"],
-        image: "/src/assets/images/portail-bancaire.png"
+        image: "/images/portail-bancaire.png"
       }
     },
     "Optimiser": {
@@ -66,7 +66,7 @@ const Blocs = () => {
         period: "Février 2025",
         description: "Développement d'un scanner de vulnérabilités SQL open source en Go. L'outil permet de détecter automatiquement les vulnérabilités d'injection SQL dans les applications web. Il utilise des patterns de détection basés sur les erreurs SQL, des tests de temps de réponse et l'analyse des changements dans la structure de la page. Une analyse récursive des pages et une gestion efficace des scans concurrents permettent une couverture complète du site. Des mécanismes de rate limiting permettent d'éviter les impacts sur les systèmes cibles lors des tests de pénétration.",
         technologies: ["Go"],
-        image: "/src/assets/images/scanner-sql.jpg"
+        image: "/images/scanner-sql.jpg"
       }
     },
     "Administrer": {
@@ -86,7 +86,7 @@ const Blocs = () => {
         period: "Février 2024 - Mars 2024",
         description: "Configuration et administration d'un serveur web Apache. Mise en place d'une infrastructure web complète avec gestion des certificats SSL, configuration des virtual hosts, mise en place de règles de pare-feu, et optimisation des performances. L'administration inclut également la gestion des utilisateurs, la configuration des logs, et la mise en place de sauvegardes automatisées.",
         technologies: ["Apache", "Linux", "PHP"],
-        image: "/src/assets/images/serveur-web.png"
+        image: "/images/serveur-web.png"
       }
     },
     "Gérer": {
@@ -108,10 +108,10 @@ const Blocs = () => {
         description: "Développement d'un système de réservation de billets de train avec MongoDB. Conception d'une base de données optimisée pour les trajets, réservations et utilisateurs. L'application inclut un système de panier dynamique, une gestion des sessions et un processus de paiement sécurisé avec timeout.",
         technologies: ["JavaScript", "MongoDB", "Node.js", "Express"],
         images: [
-          "/src/assets/images/train1.png",
-          "/src/assets/images/train2.png",
-          "/src/assets/images/train3.png",
-          "/src/assets/images/train4.png"
+          "/images/train1.png",
+          "/images/train2.png",
+          "/images/train3.png",
+          "/images/train4.png"
         ]
       }
     },
@@ -133,7 +133,7 @@ const Blocs = () => {
         period: "Février 2024 - Juin 2024",
         description: "Développement d'un jeu sur le thème de Zelda en JavaFX. Analyse approfondie des processus de jeu et des besoins utilisateurs. L'identification des processus a permis d'améliorer l'expérience de jeu, tandis que la formalisation des besoins via des user stories a guidé le développement. Les critères de faisabilité ont été évalués en termes de performance et de complexité technique. La méthode Scrum a été mise en œuvre avec des sprints de deux semaines, des revues régulières et une adaptation continue aux retours utilisateurs.",
         technologies: ["Java", "JavaFX"],
-        image: "/src/assets/images/zelda.png"
+        image: "/images/zelda.png"
       }
     },
     "Collaborer": {
@@ -155,10 +155,10 @@ const Blocs = () => {
         description: "Développement d'un système de recherche de parcours dans une base de données de plus de 150 000 planètes de l'univers Star Wars. L'application permet de trouver les meilleurs itinéraires intergalactiques avec une interface utilisateur intuitive. Le projet met en œuvre des algorithmes de recherche efficaces pour gérer cette masse de données, tout en assurant une expérience utilisateur fluide. Le développement s'est fait en équipe avec une répartition claire des rôles, l'utilisation de Git pour la gestion collaborative du code, et l'organisation de réunions régulières pour la coordination. L'intégration continue et le code review systématique assurent la cohérence du développement.",
         technologies: ["HTML", "CSS", "JavaScript", "PHP", "Java", "C"],
         images: [
-          "/src/assets/images/traviaRecherche1.png",
-          "/src/assets/images/traviaRecherche2.png",
-          "/src/assets/images/traviaRecherche3.png",
-          "/src/assets/images/traviaRecherche4.png"
+          "/images/traviaRecherche1.png",
+          "/images/traviaRecherche2.png",
+          "/images/traviaRecherche3.png",
+          "/images/traviaRecherche4.png"
         ]
       }
     }
