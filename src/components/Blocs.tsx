@@ -216,13 +216,13 @@ const Blocs = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="portfolio" className="py-10 sm:py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4">
         <AnimatedSection>
-          <h2 className="text-4xl font-light mb-6 text-center">Compétences par blocs</h2>
+          <h2 className="text-3xl sm:text-4xl font-light mb-4 sm:mb-6 text-center">Compétences par blocs</h2>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {competenceCards.map((comp, index) => (
             <motion.div
               key={comp.name}
@@ -234,19 +234,19 @@ const Blocs = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <div className={`${comp.color} p-4 rounded-t-lg text-white flex items-center justify-between`}>
-                <h3 className="text-xl font-semibold">{comp.name}</h3>
-                <comp.icon className="w-6 h-6" />
+              <div className={`${comp.color} p-3 sm:p-4 rounded-t-lg text-white flex items-center justify-between`}>
+                <h3 className="text-lg sm:text-xl font-semibold">{comp.name}</h3>
+                <comp.icon className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <div className="p-6">
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-sm font-medium">
+              <div className="p-4 sm:p-6">
+                <div className="mb-2 sm:mb-4">
+                  <span className="inline-block px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-xs sm:text-sm font-medium">
                     {comp.niveau}
                   </span>
                 </div>
-                <p className="text-gray-900 dark:text-white mb-4">{comp.description}</p>
-                <div className="border-t pt-4">
-                  <p className="text-sm text-gray-900 dark:text-white">{comp.details}</p>
+                <p className="text-sm sm:text-base text-gray-900 dark:text-white mb-3 sm:mb-4">{comp.description}</p>
+                <div className="border-t pt-3 sm:pt-4">
+                  <p className="text-xs sm:text-sm text-gray-900 dark:text-white">{comp.details}</p>
                 </div>
               </div>
             </motion.div>
@@ -491,7 +491,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
 
   return (
     <>
-      <div className="relative h-64 bg-gray-100 dark:bg-gray-700">
+      <div className="relative h-48 sm:h-64 bg-gray-100 dark:bg-gray-700">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -508,7 +508,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
               transition={{ duration: 0.3, ease: "easeInOut" }}
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
-              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="text-white text-sm sm:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 Cliquez pour agrandir
               </span>
             </div>
@@ -520,10 +520,10 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
             e.stopPropagation();
             previousImage();
           }}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
           aria-label="Image précédente"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -533,15 +533,15 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
             e.stopPropagation();
             nextImage();
           }}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
           aria-label="Image suivante"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
         
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
           {images.map((_, index) => (
             <button
               key={index}
@@ -549,7 +549,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                 e.stopPropagation();
                 setCurrentIndex(index);
               }}
-              className={`w-2 h-2 rounded-full transition-colors ${
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors ${
                 index === currentIndex ? 'bg-blue-500' : 'bg-gray-300 dark:bg-gray-600'
               }`}
               aria-label={`Aller à l'image ${index + 1}`}
@@ -562,7 +562,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
       <AnimatePresence>
         {selectedImage && (
           <motion.div 
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-start bg-black bg-opacity-90 p-4 overflow-y-auto"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-start bg-black bg-opacity-90 p-2 sm:p-4 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -576,14 +576,15 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="flex justify-end mb-4">
+              <div className="flex justify-end mb-2 sm:mb-4">
                 <motion.button
                   onClick={() => setSelectedImage(null)}
                   className="text-white hover:text-gray-300 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <X size={32} />
+                  <X size={24} className="sm:hidden" />
+                  <X size={32} className="hidden sm:block" />
                 </motion.button>
               </div>
               <motion.div 
@@ -612,10 +613,10 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                       e.stopPropagation();
                       previousImage();
                     }}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     aria-label="Image précédente"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
@@ -625,18 +626,18 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                       e.stopPropagation();
                       nextImage();
                     }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     aria-label="Image suivante"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <motion.h5 
-                    className="text-xl font-semibold mb-2 text-gray-900 dark:text-white"
+                    className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -645,7 +646,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                     {title}
                   </motion.h5>
                   <motion.p 
-                    className="text-sm text-gray-600 dark:text-gray-300 mb-2"
+                    className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -654,7 +655,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                     {period}
                   </motion.p>
                   <motion.p 
-                    className="text-gray-900 dark:text-white mb-4"
+                    className="text-sm sm:text-base text-gray-900 dark:text-white mb-4"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -663,7 +664,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                     {description}
                   </motion.p>
                   <motion.div 
-                    className="flex flex-wrap gap-2"
+                    className="flex flex-wrap gap-1.5 sm:gap-2"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -672,7 +673,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                     {technologies.map((tech, index) => (
                       <motion.span 
                         key={index}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-sm"
+                        className="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white rounded-full text-xs sm:text-sm"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
