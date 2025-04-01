@@ -157,8 +157,7 @@ const Blocs = () => {
         images: [
           "/images/traviaRecherche1.png",
           "/images/traviaRecherche2.png",
-          "/images/traviaRecherche3.png",
-          "/images/traviaRecherche4.png"
+          "/images/traviaRecherche3.png"
         ]
       }
     }
