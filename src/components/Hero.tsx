@@ -4,9 +4,9 @@ import Blob from './Blob';
 
 const Hero = () => {
   return (
-    <div id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 bg-background">
+    <div id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 bg-white dark:bg-background">
       <motion.div 
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center opacity-50 dark:opacity-100"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
@@ -25,10 +25,10 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-          <span className="text-gray-900 dark:text-gray-900">Elyes Hamani</span>
+          <span className="text-gray-900 dark:text-gray-100">Elyes Hamani</span>
           <br />
           <motion.span 
-            className="text-primary"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-500"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
@@ -37,7 +37,7 @@ const Hero = () => {
           </motion.span>
         </motion.h1>
         <motion.p 
-          className="text-lg sm:text-xl text-gray-900 dark:text-gray-900 mb-8"
+          className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.8 }}

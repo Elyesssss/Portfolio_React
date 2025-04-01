@@ -16,13 +16,15 @@ const About = () => {
     <section id="à-propos" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2 
-          className="text-4xl font-light mb-16 text-center text-text"
+          className="text-5xl sm:text-7xl font-light mb-8 tracking-tight text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          À Propos
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-500">
+            À Propos
+          </span>
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div 

@@ -61,7 +61,11 @@ const Projects = () => {
     <section id="projets" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection>
-          <h2 className="text-4xl font-light mb-16 text-center text-text">Projets</h2>
+          <h2 className="text-5xl sm:text-7xl font-light mb-8 tracking-tight text-center">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-500">
+              Projets
+            </span>
+          </h2>
         </AnimatedSection>
         <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"

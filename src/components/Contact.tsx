@@ -1,10 +1,17 @@
 import React from 'react';
+import AnimatedSection from './AnimatedSection';
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl font-light mb-16 text-center text-text">Contact</h2>
+        <AnimatedSection>
+          <h2 className="text-5xl sm:text-7xl font-light mb-8 tracking-tight text-center">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-500">
+              Contact
+            </span>
+          </h2>
+        </AnimatedSection>
         <div className="bg-secondary p-8 rounded-lg shadow-sm">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Première colonne */}
