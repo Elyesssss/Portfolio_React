@@ -87,7 +87,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <motion.a
             href="/"
-            className="text-2xl font-bold text-text"
+            className="text-2xl font-bold text-text dark:text-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={(e) => handleNavClick(e, 'hero')}
@@ -103,8 +103,8 @@ const Navbar = () => {
                 href={`#${item.id}`}
                 className={`nav-link relative ${
                   activeSection === item.id 
-                    ? 'text-primary' 
-                    : 'text-text/70'
+                    ? 'text-primary dark:text-white' 
+                    : 'text-text/70 dark:text-white/70'
                 }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -149,10 +149,10 @@ const Navbar = () => {
 
             <motion.a
               href="#contact"
-              className={`border border-text px-6 py-2 rounded-full transition-colors ${
+              className={`border border-text dark:border-white px-6 py-2 rounded-full transition-colors ${
                 activeSection === 'contact' 
-                  ? 'bg-text text-background' 
-                  : 'hover:bg-text hover:text-background'
+                  ? 'bg-text text-background dark:bg-white dark:text-gray-900' 
+                  : 'hover:bg-text hover:text-background dark:hover:bg-white dark:hover:text-gray-900'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -181,7 +181,7 @@ const Navbar = () => {
             </motion.button>
 
             <button
-              className="text-text"
+              className="text-text dark:text-white"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -193,7 +193,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="absolute top-full left-0 right-0 bg-secondary shadow-lg md:hidden"
+              className="absolute top-full left-0 right-0 bg-secondary dark:bg-gray-800 shadow-lg md:hidden"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -206,8 +206,8 @@ const Navbar = () => {
                     href={`#${item.id}`}
                     className={`py-2 px-4 hover:bg-text/10 rounded transition-colors ${
                       activeSection === item.id 
-                        ? 'text-primary' 
-                        : 'text-text/70'
+                        ? 'text-primary dark:text-white' 
+                        : 'text-text/70 dark:text-white/70'
                     }`}
                     onClick={(e) => handleNavClick(e, item.id)}
                   >
@@ -218,8 +218,8 @@ const Navbar = () => {
                   href="#contact"
                   className={`py-2 px-4 mt-2 rounded-full text-center transition-colors ${
                     activeSection === 'contact'
-                      ? 'bg-text text-background'
-                      : 'bg-text/90 text-background hover:bg-text'
+                      ? 'bg-text text-background dark:bg-white dark:text-gray-900'
+                      : 'bg-text/90 text-background hover:bg-text dark:bg-white/90 dark:text-gray-900 dark:hover:bg-white'
                   }`}
                   onClick={(e) => handleNavClick(e, 'contact')}
                 >
