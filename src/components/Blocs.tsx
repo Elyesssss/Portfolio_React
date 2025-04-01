@@ -19,6 +19,7 @@ interface CompetenceContent {
     technologies: string[];
     images?: string[];
     image?: string;
+    repository?: string;
   };
 }
 
@@ -43,7 +44,7 @@ const Blocs = () => {
       project: {
         title: "Portail Bancaire",
         period: "Septembre 2024 - Janvier 2025",
-        description: "Création d'un portail bancaire programmé en HTML/CSS/PHP/SQL. L'application met en œuvre une interface utilisateur ergonomique, des fonctionnalités de sécurité robustes, et une architecture modulaire suivant les bonnes pratiques de développement. L'application répond aux exigences fonctionnelles spécifiques du secteur bancaire tout en respectant les normes d'accessibilité.",
+        description: "Développé en équipe de 5 personnes, ce portail bancaire démontre la compétence 'Réaliser' à travers une approche méthodique. Notre équipe a appliqué la méthode Agile Scrum avec des sprints réguliers pour structurer le développement. Le projet est construit sur une architecture MVC claire, avec une attention particulière portée à la protection des données et à l'ergonomie. L'interface respecte les normes d'accessibilité WCAG et offre une expérience utilisateur intuitive. La qualité du code est assurée par des cahiers de tests complets, incluant des tests unitaires et d'intégrité pour valider chaque fonctionnalité.",
         technologies: ["HTML", "CSS", "PHP", "SQL"],
         image: "/images/portail-bancaire.png"
       }
@@ -64,9 +65,10 @@ const Blocs = () => {
       project: {
         title: "Scanner de vulnérabilité SQL",
         period: "Février 2025",
-        description: "Développement d'un scanner de vulnérabilités SQL open source en Go. L'outil permet de détecter automatiquement les vulnérabilités d'injection SQL dans les applications web. Il utilise des patterns de détection basés sur les erreurs SQL, des tests de temps de réponse et l'analyse des changements dans la structure de la page. Une analyse récursive des pages et une gestion efficace des scans concurrents permettent une couverture complète du site. Des mécanismes de rate limiting permettent d'éviter les impacts sur les systèmes cibles lors des tests de pénétration.",
+        description: "Ce scanner de vulnérabilités SQL incarne parfaitement la compétence 'Optimiser' à travers un projet personnel né d'une passion pour la cybersécurité. Développé en autodidacte avec le langage Go, l'outil implémente des algorithmes sophistiqués pour la détection automatisée des failles d'injection SQL. L'architecture du projet démontre la maîtrise des structures de données complexes avec une analyse récursive des pages web et une gestion efficace des scans.  Le projet illustre la capacité à sécuriser les données en proposant des rapports détaillés des vulnérabilités et une interface en ligne de commande intuitive, tout en étant disponible en open source pour la communauté.",
         technologies: ["Go"],
-        image: "/images/scanner-sql.jpg"
+        image: "/images/scanner-sql.jpg",
+        repository: "https://github.com/Elyesssss/SqlScan"
       }
     },
     "Administrer": {
@@ -84,7 +86,7 @@ const Blocs = () => {
       project: {
         title: "Serveur Web",
         period: "Février 2024 - Mars 2024",
-        description: "Configuration et administration d'un serveur web Apache. Mise en place d'une infrastructure web complète avec gestion des certificats SSL, configuration des virtual hosts, mise en place de règles de pare-feu, et optimisation des performances. L'administration inclut également la gestion des utilisateurs, la configuration des logs, et la mise en place de sauvegardes automatisées.",
+        description: "Ce projet de serveur web Apache met en valeur la compétence 'Administrer' en couvrant l'ensemble des aspects de déploiement et de configuration réseau. La mise en place d'un serveur DNS pour la résolution de noms et d'un serveur DHCP pour l'attribution dynamique d'adresses IP démontre la maîtrise des services réseau essentiels. La sécurité est assurée par la configuration d'un pare-feu et la gestion des logs système. L'architecture inclut la virtualisation des services et une configuration optimisée du serveur Apache, permettant une gestion efficace des virtual hosts et des performances.",
         technologies: ["Apache", "Linux", "PHP"],
         image: "/images/serveur-web.png"
       }
@@ -105,7 +107,7 @@ const Blocs = () => {
       project: {
         title: "Système de Réservation de Billets de Train",
         period: "Janvier 2025 - Mars 2025",
-        description: "Développement d'un système de réservation de billets de train avec MongoDB. Conception d'une base de données optimisée pour les trajets, réservations et utilisateurs. L'application inclut un système de panier dynamique, une gestion des sessions et un processus de paiement sécurisé avec timeout.",
+        description: "Ce système de réservation concrétise la compétence 'Gérer' à travers sa capacité à concevoir et optimiser une base de données complexe. L'utilisation de MongoDB pour gérer les données hétérogènes (trajets, réservations, utilisateurs, paiements) démontre la maîtrise des modèles de données NoSQL. La sécurité des données est assurée par le chiffrement, la gestion des sessions et le processus de paiement sécurisé, tandis que le tableau de bord interactif et les visualisations en temps réel offrent une restitution claire des données. L'optimisation du modèle de données et l'indexation permettent une gestion performante des réservations multiples.",
         technologies: ["JavaScript", "MongoDB", "Node.js", "Express"],
         images: [
           "/images/train1.png",
@@ -131,7 +133,7 @@ const Blocs = () => {
       project: {
         title: "Jeu Zelda",
         period: "Février 2024 - Juin 2024",
-        description: "Développement d'un jeu sur le thème de Zelda en JavaFX. Analyse approfondie des processus de jeu et des besoins utilisateurs. L'identification des processus a permis d'améliorer l'expérience de jeu, tandis que la formalisation des besoins via des user stories a guidé le développement. Les critères de faisabilité ont été évalués en termes de performance et de complexité technique. La méthode Scrum a été mise en œuvre avec des sprints de deux semaines, des revues régulières et une adaptation continue aux retours utilisateurs.",
+        description: "Ce projet de jeu Zelda reflète l'excellence de la compétence 'Conduire' en mettant l'accent sur la satisfaction des besoins utilisateurs à travers une démarche de projet structurée. L'analyse approfondie des processus de jeu et la cartographie des interactions utilisateur via des user stories témoignent de la capacité à identifier et comprendre les besoins du client. L'évaluation des critères de faisabilité (technique, temporelle, budgétaire) et l'analyse des risques, ainsi que l'adoption de la méthode Scrum avec des sprints réguliers et des métriques de suivi, attestent de la maîtrise du suivi de projet. L'adaptation continue aux retours utilisateurs souligne la capacité à faire évoluer le projet en fonction des besoins métiers.",
         technologies: ["Java", "JavaFX"],
         image: "/images/zelda.png"
       }
@@ -152,7 +154,7 @@ const Blocs = () => {
       project: {
         title: "Travia Tour",
         period: "Septembre 2024 - Janvier 2025",
-        description: "Développement d'un système de recherche de parcours dans une base de données de plus de 150 000 planètes de l'univers Star Wars. L'application permet de trouver les meilleurs itinéraires intergalactiques avec une interface utilisateur intuitive. Le projet met en œuvre des algorithmes de recherche efficaces pour gérer cette masse de données, tout en assurant une expérience utilisateur fluide. Le développement s'est fait en équipe avec une répartition claire des rôles, l'utilisation de Git pour la gestion collaborative du code, et l'organisation de réunions régulières pour la coordination. L'intégration continue et le code review systématique assurent la cohérence du développement.",
+        description: "Le projet Travia Tour exemplifie la compétence 'Collaborer' en mettant en lumière la capacité à travailler efficacement au sein d'une équipe informatique pluridisciplinaire. La répartition claire des rôles (développeurs, designers, testeurs) et l'organisation de rituels agiles témoignent de la compréhension de la diversité des missions au sein d'une ESN. L'utilisation de Git pour la gestion collaborative, la mise en place de l'intégration continue et les standards de code révèlent la maîtrise des outils de travail en équipe. Les code reviews systématiques et la communication transverse manifestent les compétences interpersonnelles nécessaires, tandis que la documentation technique, les rapports d'avancement et le wiki projet prouvent la capacité à rendre compte de son activité professionnelle.",
         technologies: ["HTML", "CSS", "JavaScript", "PHP", "Java", "C"],
         images: [
           "/images/traviaRecherche1.png",
@@ -311,7 +313,7 @@ const Blocs = () => {
                   <motion.img
                     src={selectedImage}
                     alt="Image en grand format"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto object-contain max-h-[600px] max-w-[800px] mx-auto"
                     initial={{ scale: 0.95 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0.95 }}
@@ -365,6 +367,21 @@ const Blocs = () => {
                         </motion.span>
                       ))}
                     </motion.div>
+                    {competences[selectedCompetence].project?.repository && (
+                      <div className="mt-4">
+                        <a
+                          href={competences[selectedCompetence].project.repository}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                          </svg>
+                          Voir le code source sur GitHub
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               </motion.div>
@@ -599,7 +616,7 @@ const CarouselImages = ({ images, title, period, description, technologies }: {
                       key={currentIndex}
                       src={images[currentIndex]}
                       alt="Image en grand format"
-                      className="w-full h-auto object-contain"
+                      className="w-full h-auto object-contain max-h-[600px] max-w-[800px] mx-auto"
                       initial={{ opacity: 0, x: 100 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -100 }}
