@@ -51,7 +51,7 @@ const Navbar = () => {
     { name: 'Compétences', id: 'compétences' },
     { name: 'Parcours', id: 'parcours' },
     { name: 'Projets', id: 'projets' },
-    { name: 'Blocs informatiques', id: 'portfolio' }
+    { name: 'Blocs ', id: 'portfolio' }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
